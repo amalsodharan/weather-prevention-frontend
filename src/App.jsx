@@ -17,8 +17,8 @@ function App() {
     setWeather(null);
 
     try {
-      // const response = await axios.post("http://localhost:8080/api/weather", params);
-      const response = await axios.post("https://weather-prevention-backend.onrender.com/api/weather", params);
+      // const response = await axios.post("http://localhost:8080/api/newweather", params);
+      const response = await axios.post("https://weather-prevention-backend.onrender.com/api/newweather", params);
       setWeather(response.data.data);
     } catch (err) {
       setError("Failed to fetch weather data.");
