@@ -1,14 +1,15 @@
 import React from "react";
-import { Box, TextField, Button, IconButton, InputBase, Paper, Stack } from "@mui/material";
+import { Box, TextField, Button, IconButton, InputBase, Paper, Stack, Typography } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import Skeleton from '@mui/material/Skeleton';
+import SiteLogo from '../../public/weather.svg';
 
 function WeatherForm({ city, setCity, onSubmit, loading }) {
   return (
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 4 }}>
     <Box
       component="form"
       onSubmit={onSubmit}
-      sx={{ display: "flex", gap: 2, justifyContent: "left", mb: 4, height: '20%' }}
+      sx={{ display: "flex", gap: 2, justifyContent: "left", height: '20%' }}
     >
         <Paper
             elevation={0}
@@ -40,6 +41,23 @@ function WeatherForm({ city, setCity, onSubmit, loading }) {
             required
             />
         </Paper>
+    </Box>
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <Box sx={{ width: '60px', height: '60px', margin: 'auto' }}>
+            <img src={SiteLogo} alt="Weather Icon" style={{ width: '100%', height: '100%' }} />
+        </Box>
+        <Typography
+            variant="h5"
+            sx={{
+            marginBottom: 0,
+            fontWeight: "600",
+            fontFamily: "Alan Sans",
+            textAlign: "center",
+            }}
+        >
+            AuraCare
+        </Typography>
+    </Box>
     </Box>
   );
 }
